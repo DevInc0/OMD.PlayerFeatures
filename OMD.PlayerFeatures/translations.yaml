@@ -1,7 +1,9 @@
-﻿god:
+﻿# Prints to player, whenever he uses /god command
+god:
   enabled: <color=green>You enabled god mode!
   disabled: <color=yellow>You disabled god mode!
 
+# Prints to player, whenever he uses /vanish command
 vanish:
   enabled: <color=green>You enabled vanish mode!
   disabled: <color=yellow>You disabled vanish mode!
