@@ -32,6 +32,8 @@ public sealed class RocketModPlayerFeatures : PlayerFeatures
 
     private readonly Component _legacyComponent;
 
+    private readonly Player _player;
+
     static RocketModPlayerFeatures()
     {
         if (!RocketModIntegration.IsRocketModUnturnedLoaded(out var rocketUnturnedAssembly))
@@ -51,6 +53,7 @@ public sealed class RocketModPlayerFeatures : PlayerFeatures
 
     internal RocketModPlayerFeatures(Player player)
     {
-        _legacyComponent = player.GetComponent(LegacyPlayerFeaturesType);
+        _player = player;
+        _legacyComponent = _player.GetComponent(LegacyPlayerFeaturesType);
     }
 }

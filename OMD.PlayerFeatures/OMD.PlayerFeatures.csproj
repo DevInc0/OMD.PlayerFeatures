@@ -31,6 +31,12 @@
     <Folder Include="docs\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="OMD.Events">
+      <HintPath>..\..\K1nd.Libraries\OMD.Events\bin\Release\net481\OMD.Events.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
   <Target Name="ChangeAliasesOfNugetRefs" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
     <ItemGroup>
     </ItemGroup>
