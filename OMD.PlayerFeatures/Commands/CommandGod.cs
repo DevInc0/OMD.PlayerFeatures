@@ -11,7 +11,7 @@ namespace OMD.PlayersFeatures.Commands;
 
 [Command("god")]
 [CommandDescription("Switch your god mode")]
-public class CommandGod : UnturnedCommand
+public sealed class CommandGod : UnturnedCommand
 {
     private readonly IStringLocalizer _localizer;
 
