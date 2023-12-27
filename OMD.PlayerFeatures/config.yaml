@@ -1,0 +1,5 @@
+# Sets the features system to use
+# Available values:
+#  - OpenMod:   plugin will use custom OpenMod's features system (default)    
+#  - RocketMod: plugin will use legacy RocketMod's features system
+featuresSystem: OpenMod 

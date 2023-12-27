@@ -1,0 +1,7 @@
+﻿god:
+  enabled: <color=green>You enabled god mode!
+  disabled: <color=yellow>You disabled god mode!
+
+vanish:
+  enabled: <color=green>You enabled vanish mode!
+  disabled: <color=yellow>You disabled vanish mode!
