@@ -19,6 +19,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="OMD.Events" Version="1.4.0" />
     <PackageReference Include="OpenMod.Unturned" Version="3.7.4" />
     <None Include="docs\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
@@ -26,12 +27,6 @@
   <ItemGroup>
     <EmbeddedResource Include="config.yaml" />
     <EmbeddedResource Include="translations.yaml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="OMD.Events">
-      <HintPath>..\..\K1nd.Libraries\OMD.Events\bin\Release\net481\OMD.Events.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <Target Name="ChangeAliasesOfNugetRefs" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
