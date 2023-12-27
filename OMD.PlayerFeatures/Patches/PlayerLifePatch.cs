@@ -21,13 +21,13 @@ internal static class PlayerLifePatch
     {
         var targetType = typeof(PlayerLife);
 
-        yield return targetType.GetMethod("askStarve");
-        yield return targetType.GetMethod("askDehydrate");
-        yield return targetType.GetMethod("askInfect");
-        yield return targetType.GetMethod("doDamage");
-        yield return targetType.GetMethod("serverSetBleeding");
-        yield return targetType.GetMethod("serverSetLegsBroken");
-        yield return targetType.GetMethod("breakLegs");
+        yield return AccessTools.Method(targetType, "askStarve");
+        yield return AccessTools.Method(targetType, "askDehydrate");
+        yield return AccessTools.Method(targetType, "askInfect");
+        yield return AccessTools.Method(targetType, "doDamage");
+        yield return AccessTools.Method(targetType, "serverSetBleeding");
+        yield return AccessTools.Method(targetType, "serverSetLegsBroken");
+        yield return AccessTools.Method(targetType, "breakLegs");
     }
 
     [HarmonyPrefix]

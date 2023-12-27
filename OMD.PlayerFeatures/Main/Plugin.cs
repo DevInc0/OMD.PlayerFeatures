@@ -11,7 +11,7 @@ using OpenMod.Unturned.Plugins;
 using OpenMod.Unturned.RocketMod;
 using System;
 
-[assembly: PluginMetadata("OMD.PlayerFeatures", DisplayName = "OMD.PlayerFeatures", Author = "K1nd")]
+[assembly: PluginMetadata("OMD.PlayersFeatures", DisplayName = "OMD.PlayersFeatures", Author = "K1nd")]
 
 namespace OMD.PlayersFeatures.Main;
 

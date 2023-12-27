@@ -10,7 +10,7 @@ using System;
 namespace OMD.PlayersFeatures.Commands;
 
 [Command("vanish")]
-[CommandDescription("Switch your god mode")]
+[CommandDescription("Switch your vanish mode")]
 public sealed class CommandVanish : UnturnedCommand
 {
     private readonly IStringLocalizer _localizer;
