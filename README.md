@@ -1,5 +1,5 @@
-# OMD.PlayerFeatures
-PlayerFeatures is a plugin for Unturned / OpenMod. 
+# OMD.PlayersFeatures
+PlayersFeatures is a plugin for Unturned / OpenMod. 
 
 It provides a more ellegant way to use God and Vanish modes without LDM to be installed. 
 
@@ -8,16 +8,32 @@ However, it can also integrate with LDM.
 ### Remarks
 - God mode makes a player immortal, he won't get damage, broke legs, get a bleeding and so on.
 
-- Vanish mode makes a player invisible. Other players won't see him. Zombies and animals won't be alerted by him.
+- Vanish mode makes a player invisible. Other players won't see him. **Zombies and animals won't be alerted by him.**
 
-# Commands
+# How to install
+Run command `openmod install OMD.PlayersFeatures`
+
+**If you are using RocketMod (even if you set `featuresSystem` to `RocketMod` in configuration file):**
+- Make sure you disabled `god` command in `.../Rocket/Commands.config.xml` file
+- Make sure you disable `vanish` command in `.../Rocket/Commands.config.xml` file
+
+Example:
+```xml
+...
+<Command Name="god" Enabled="false" Priority="Normal">Rocket.Unturned.Commands.CommandGod/god</Command>
+<Command Name="vanish" Enabled="false" Priority="Normal">Rocket.Unturned.Commands.CommandVanish/vanish</Command>
+...
+```
+
+## Commands
 - /god - Switches your god mode.
 - /vanish - Switches your vanish mode.
 
-# Permissions
-To be made...
+## Permissions
+- OMD.PlayersFeatures:commands.god: Grants access to the `/god` command.
+- OMD.PlayersFeatures:commands.vanish: Grants access to the `/vanish` command.
 
-# Configuration
+## Configuration
 ```yaml
 # Sets the features system to use
 # Available values:
@@ -26,7 +42,7 @@ To be made...
 featuresSystem: OpenMod 
 ```
 
-# Translations
+## Translations
 ```yaml
 # Prints to player, whenever he uses /god command
 god:
