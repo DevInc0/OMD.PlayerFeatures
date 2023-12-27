@@ -1,4 +1,5 @@
-﻿using OMD.PlayersFeatures.Enumerations;
+﻿using Microsoft.Extensions.DependencyInjection;
+using OMD.PlayersFeatures.Enumerations;
 using OMD.PlayersFeatures.Models;
 using OpenMod.API.Ioc;
 using OpenMod.Unturned.Players;
@@ -6,7 +7,7 @@ using System;
 
 namespace OMD.PlayersFeatures.Services;
 
-[PluginServiceImplementation]
+[PluginServiceImplementation(Lifetime = ServiceLifetime.Singleton)]
 public sealed class PlayerFeaturesFactory : IPlayerFeaturesFactory
 {
     private FeaturesIntegrationType _type;
