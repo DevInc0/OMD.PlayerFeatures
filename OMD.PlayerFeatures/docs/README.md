@@ -8,7 +8,7 @@ However, it can also integrate with LDM.
 ### Remarks
 - God mode makes a player immortal, he won't get damage, broke legs, get a bleeding and so on.
 
-- Vanish mode makes a player invisible. Other players won't see him. **Zombies and animals won't be alerted by him.**
+- Vanish mode makes a player invisible. Other players won't see him.
 
 # How to install
 Run command `openmod install OMD.PlayersFeatures`
