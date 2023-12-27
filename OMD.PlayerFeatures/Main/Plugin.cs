@@ -24,6 +24,7 @@ public class PlayerFeaturesPlugin : OpenModUnturnedPlugin
     private readonly ILogger<PlayerFeaturesPlugin> _logger;
 
     public PlayerFeaturesPlugin(
+        IPlayerFeaturesService _, // initialize service
         IPlayerFeaturesFactory featuresFactory,
         IConfiguration configuration,
         ILogger<PlayerFeaturesPlugin> logger,
@@ -42,7 +43,7 @@ public class PlayerFeaturesPlugin : OpenModUnturnedPlugin
 
             _featuresFactory.SetIntegrationType(integrationType);
 
-            _logger.LogInformation("Succesfully set integration type to {IntegrationType}", integrationType);
+            _logger.LogInformation("Succesfully set integration type to {IntegrationType}", _featuresFactory.IntegrationType);
 
             PatchFeatures();
         }

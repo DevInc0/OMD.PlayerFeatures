@@ -9,11 +9,11 @@ namespace OMD.PlayersFeatures.Patches;
 [HarmonyPatch(typeof(PlayerLife))]
 internal static class PlayerLifePatch
 {
-    private static bool ShouldBlockFor(Player player)
+    private static bool ShouldNotBlockFor(Player player)
     {
         var steamId = player.channel.owner.playerID.steamID;
 
-        return OpenModPlayerFeatures.IsEnabled && OpenModPlayerFeatures.PlayersInGodMode.Contains(steamId);
+        return !OpenModPlayerFeatures.IsEnabled || !OpenModPlayerFeatures.PlayersInGodMode.Contains(steamId);
     }
 
     [HarmonyTargetMethods]
@@ -33,6 +33,6 @@ internal static class PlayerLifePatch
     [HarmonyPrefix]
     private static bool LifeParametersChangersPrefix(PlayerLife __instance)
     {
-        return ShouldBlockFor(__instance.player);
+        return ShouldNotBlockFor(__instance.player);
     }
 }
