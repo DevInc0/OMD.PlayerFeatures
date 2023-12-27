@@ -10,7 +10,6 @@ using OpenMod.API.Plugins;
 using OpenMod.Unturned.Plugins;
 using OpenMod.Unturned.RocketMod;
 using System;
-using System.Reflection;
 
 [assembly: PluginMetadata("OMD.PlayerFeatures", DisplayName = "OMD.PlayerFeatures", Author = "K1nd")]
 
@@ -84,7 +83,7 @@ public class PlayerFeaturesPlugin : OpenModUnturnedPlugin
             Harmony.Patch(targetVanishModeSetter, postfix: vanishModePostfixMethod);
         }
 
-        switch(_featuresFactory.IntegrationType)
+        switch (_featuresFactory.IntegrationType)
         {
             case FeaturesIntegrationType.OpenMod:
                 PatchOpenModFeatures();
@@ -93,7 +92,7 @@ public class PlayerFeaturesPlugin : OpenModUnturnedPlugin
                 PatchRocketModFeatures();
                 break;
             default:
-               throw new InvalidOperationException("Failed to patch features since integration type is not set!");
+                throw new InvalidOperationException("Failed to patch features since integration type is not set!");
         }
     }
 }

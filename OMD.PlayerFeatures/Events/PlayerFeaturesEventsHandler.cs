@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OMD.Events.Models;
+﻿using OMD.Events.Models;
 using OMD.Events.Services;
 using SDG.Unturned;
+using System;
 
 namespace OMD.PlayersFeatures.Events;
 
