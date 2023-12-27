@@ -30,6 +30,6 @@ public sealed class CommandVanish : UnturnedCommand
 
         features.VanishMode = !features.VanishMode;
 
-        await PrintAsync(_localizer[$"vanish:{(features.GodMode ? "enabled" : "disabled")}"]);
+        await PrintAsync(_localizer[$"vanish:{(features.VanishMode ? "enabled" : "disabled")}"]);
     }
 }
