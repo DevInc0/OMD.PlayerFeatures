@@ -11,14 +11,22 @@ namespace OMD.PlayersFeatures.Services;
 [PluginServiceImplementation(Lifetime = ServiceLifetime.Singleton)]
 public sealed class PlayerFeaturesFactory : IPlayerFeaturesFactory
 {
+    public FeaturesIntegrationType IntegrationType { get; private set; }
+
     private Func<Player, PlayerFeatures> _featuresFactory = null!;
 
     public void SetIntegrationType(string type)
     {
         if (!Enum.TryParse(type, true, out FeaturesIntegrationType integrationType))
-            throw new ArgumentException($"Failed to parse \"{type}\" to {nameof(FeaturesIntegrationType)}");
+        {
+            IntegrationType = FeaturesIntegrationType.None;
 
-        _featuresFactory = integrationType switch {
+            throw new ArgumentException($"Failed to parse \"{type}\" to {nameof(FeaturesIntegrationType)}");
+        }
+
+        IntegrationType = integrationType;
+
+        _featuresFactory = IntegrationType switch {
             FeaturesIntegrationType.RocketMod => (player) => new RocketModPlayerFeatures(player),
             FeaturesIntegrationType.OpenMod => (player) => new OpenModPlayerFeatures(player),
             _ => (player) => throw new InvalidOperationException("Features integration type is not set!")
