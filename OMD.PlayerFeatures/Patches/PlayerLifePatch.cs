@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace OMD.PlayersFeatures.Patches;
 
-[HarmonyPatch(typeof(PlayerLife))]
+[HarmonyPatch]
 internal static class PlayerLifePatch
 {
     private static bool ShouldNotBlockFor(Player player)
