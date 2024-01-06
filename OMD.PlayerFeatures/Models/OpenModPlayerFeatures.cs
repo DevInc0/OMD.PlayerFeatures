@@ -10,6 +10,8 @@ public sealed class OpenModPlayerFeatures : PlayerFeatures
 
     internal static readonly HashSet<CSteamID> PlayersInGodMode = [];
 
+    internal static readonly HashSet<CSteamID> PlayersInVanishMode = [];
+
     /// <inheritdoc/>
     public override bool GodMode {
         get => _godMode;
@@ -71,6 +73,7 @@ public sealed class OpenModPlayerFeatures : PlayerFeatures
         if (_vanishMode == value)
             return;
 
+        var steamId = _player.channel.owner.playerID.steamID;
         var playerMovement = _player.movement;
         var playerLook = _player.look;
 
@@ -88,5 +91,10 @@ public sealed class OpenModPlayerFeatures : PlayerFeatures
         }
 
         _vanishMode = value;
+
+        if (_vanishMode)
+            PlayersInVanishMode.Add(steamId);
+        else
+            PlayersInVanishMode.Remove(steamId);
     }
 }
