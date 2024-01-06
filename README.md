@@ -1,17 +1,17 @@
-# OMD.PlayersFeatures
+# OMD.PlayersFeatures | [![Nuget](https://img.shields.io/nuget/v/OMD.PlayersFeatures)](https://www.nuget.org/packages/OMD.PlayersFeatures/) [![Nuget](https://img.shields.io/nuget/dt/OMD.PlayersFeatures?label=nuget%20downloads)](https://www.nuget.org/packages/OMD.PlayersFeatures/)
 PlayersFeatures is a plugin for Unturned / OpenMod. 
-
-[![Nuget](https://img.shields.io/nuget/v/OMD.PlayersFeatures)](https://www.nuget.org/packages/OMD.PlayersFeatures/)
-[![Nuget](https://img.shields.io/nuget/dt/OMD.PlayersFeatures?label=nuget%20downloads)](https://www.nuget.org/packages/OMD.PlayersFeatures/)
 
 It provides a more ellegant way to use God and Vanish modes without LDM to be installed. 
 
 However, it can also integrate with LDM.
 
 ### Remarks
-- God mode makes a player immortal, he won't get damage, broke legs, get a bleeding and so on.
+**God mode** makes a player immortal, he won't get damage, broke legs, get a bleeding and so on.
 
-- Vanish mode makes a player invisible. Other players won't see him. **Zombies and animals won't be alerted by him.**
+**Vanish mode** makes a player invisible. Other players won't see him. **Zombies and animals won't be alerted by a player in vanish mode.**
+
+![Vanish-Alert-Blocking-Preview](https://github.com/K1nd0/OMD.PlayersFeatures/assets/63493877/808910f6-7a4b-4379-97d9-895c66dd9d58)
+
 
 # How to install
 Run command `openmod install OMD.PlayersFeatures`
