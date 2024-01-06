@@ -34,6 +34,7 @@ internal static class AlertToolPatch
         return AccessTools.Method(targetType, targetMethodName, targetMethodParameterTypes);
     }
 
+    [HarmonyPrefix]
     private static bool AlertPrefix(Player player)
     {
         return ShouldNotBlockFor(player);
