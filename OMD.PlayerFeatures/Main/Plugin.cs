@@ -15,41 +15,28 @@ using System;
 
 namespace OMD.PlayersFeatures.Main;
 
-public class PlayerFeaturesPlugin : OpenModUnturnedPlugin
+public class PlayerFeaturesPlugin(
+    IPlayerFeaturesService _, // initialize service
+    IPlayerFeaturesFactory featuresFactory,
+    IConfiguration configuration,
+    ILogger<PlayerFeaturesPlugin> logger,
+    IServiceProvider serviceProvider) : OpenModUnturnedPlugin(serviceProvider)
 {
-    private readonly IPlayerFeaturesFactory _featuresFactory;
-
-    private readonly IConfiguration _configuration;
-
-    private readonly ILogger<PlayerFeaturesPlugin> _logger;
-
-    public PlayerFeaturesPlugin(
-        IPlayerFeaturesService _, // initialize service
-        IPlayerFeaturesFactory featuresFactory,
-        IConfiguration configuration,
-        ILogger<PlayerFeaturesPlugin> logger,
-        IServiceProvider serviceProvider) : base(serviceProvider)
-    {
-        _featuresFactory = featuresFactory;
-        _configuration = configuration;
-        _logger = logger;
-    }
-
     protected override UniTask OnLoadAsync()
     {
         try
         {
-            var integrationType = _configuration.GetSection("featuresSystem").Get<string>();
+            var integrationType = configuration.GetSection("featuresSystem").Get<string>();
 
-            _featuresFactory.SetIntegrationType(integrationType);
+            featuresFactory.SetIntegrationType(integrationType);
 
-            _logger.LogInformation("Succesfully set integration type to {IntegrationType}", _featuresFactory.IntegrationType);
+            logger.LogInformation("Succesfully set integration type to {IntegrationType}", featuresFactory.IntegrationType);
 
             PatchFeatures();
         }
         catch (Exception exception)
         {
-            _logger.LogError(exception, "An error occurred while initializing OMD.PlayerFeatures!");
+            logger.LogError(exception, "An error occurred while initializing OMD.PlayerFeatures!");
         }
 
         return UniTask.CompletedTask;
@@ -84,7 +71,7 @@ public class PlayerFeaturesPlugin : OpenModUnturnedPlugin
             Harmony.Patch(targetVanishModeSetter, postfix: vanishModePostfixMethod);
         }
 
-        switch (_featuresFactory.IntegrationType)
+        switch (featuresFactory.IntegrationType)
         {
             case FeaturesIntegrationType.OpenMod:
                 PatchOpenModFeatures();
