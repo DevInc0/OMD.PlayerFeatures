@@ -1,8 +1,5 @@
-# OMD.PlayersFeatures
+# OMD.PlayersFeatures | [![Nuget](https://img.shields.io/nuget/v/OMD.PlayersFeatures)](https://www.nuget.org/packages/OMD.PlayersFeatures/) [![Nuget](https://img.shields.io/nuget/dt/OMD.PlayersFeatures?label=nuget%20downloads)](https://www.nuget.org/packages/OMD.PlayersFeatures/)
 PlayersFeatures is a plugin for Unturned / OpenMod. 
-
-[![Nuget](https://img.shields.io/nuget/v/OMD.PlayersFeatures)](https://www.nuget.org/packages/OMD.PlayersFeatures/)
-[![Nuget](https://img.shields.io/nuget/dt/OMD.PlayersFeatures?label=nuget%20downloads)](https://www.nuget.org/packages/OMD.PlayersFeatures/)
 
 It provides a more ellegant way to use God and Vanish modes without LDM to be installed. 
 
