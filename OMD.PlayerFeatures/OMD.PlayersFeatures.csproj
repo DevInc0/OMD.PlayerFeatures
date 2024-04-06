@@ -11,11 +11,11 @@
     <WarningsAsErrors>nullable</WarningsAsErrors>
     <NoWarn>$(NoWarn);NU1701;NU1702;CS0436</NoWarn>
 
-    <Version>1.2.0</Version>
-    <InformationalVersion>1.2.0</InformationalVersion>
-    <PackageVersion>1.2.0</PackageVersion>
+    <Version>1.3.0</Version>
+    <InformationalVersion>1.3.0</InformationalVersion>
+    <PackageVersion>1.3.0</PackageVersion>
 
-    <PackageReleaseNotes>Made so vanish mode now prevents alerting zombies and animals. See README for demonstration.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fixed bug, when god-mode and vanish-mode were saved after player's reconnection.</PackageReleaseNotes>
     
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <GenerateNugetPackage>true</GenerateNugetPackage>

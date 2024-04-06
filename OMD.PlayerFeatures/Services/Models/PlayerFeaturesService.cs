@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using OMD.PlayersFeatures.Extensions;
 using OMD.PlayersFeatures.Models;
 using OpenMod.API.Ioc;
 using OpenMod.Unturned.Players;
@@ -38,11 +39,6 @@ public sealed class PlayerFeaturesService : IPlayerFeaturesService, IDisposable
         Instance = null!;
     }
 
-    public void TryDisposeFor(UnturnedPlayer player)
-    {
-        _features.TryRemove(player.SteamId, out _);
-    }
-
     private void EnsureCreatedFor(UnturnedPlayer player)
     {
         if (_features.ContainsKey(player.SteamId)) return;
@@ -50,5 +46,15 @@ public sealed class PlayerFeaturesService : IPlayerFeaturesService, IDisposable
         var playerFeatures = _featuresFactory.CreateFor(player);
 
         _features.TryAdd(player.SteamId, playerFeatures);
+    }
+
+    public void TryDisposeFor(UnturnedPlayer player)
+    {
+        var playerFeatures = player.Features();
+
+        playerFeatures.VanishMode = false;
+        playerFeatures.GodMode = false;
+
+        _features.TryRemove(player.SteamId, out _);
     }
 }

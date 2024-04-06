@@ -20,14 +20,18 @@ internal static class PlayerLifePatch
     private static IEnumerable<MethodBase> FindTargetMethods()
     {
         var targetType = typeof(PlayerLife);
+        string[] targetMethodNames = [
+            "askStarve",
+            "askDehydrate",
+            "askInfect",
+            "doDamage",
+            "serverSetBleeding",
+            "serverSetLegsBroken",
+            "breakLegs"
+        ];
 
-        yield return AccessTools.Method(targetType, "askStarve");
-        yield return AccessTools.Method(targetType, "askDehydrate");
-        yield return AccessTools.Method(targetType, "askInfect");
-        yield return AccessTools.Method(targetType, "doDamage");
-        yield return AccessTools.Method(targetType, "serverSetBleeding");
-        yield return AccessTools.Method(targetType, "serverSetLegsBroken");
-        yield return AccessTools.Method(targetType, "breakLegs");
+        foreach (var targetMethodName in targetMethodNames)
+            yield return AccessTools.Method(targetType, targetMethodName);
     }
 
     [HarmonyPrefix]
